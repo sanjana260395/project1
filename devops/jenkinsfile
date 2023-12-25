@@ -1,0 +1,17 @@
+pipeline {
+      agent any 
+      stages {
+         
+	stage ('clone'){
+            steps {
+              
+                git url:'https://github.com/devopsacademy2015/new-java-prj-oct3.git', branch:'main', credentialsId: 'github-creds'
+                
+                sleep 100
+                
+                  } 
+               }
+               
+          
+      }    
+    }
