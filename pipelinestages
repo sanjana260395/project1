@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    environment {
+        RELEASE = '20.04'  // Declaring globally
+        LOG_LEVEL = 'INFO' // Declaring globally to ensure access in all stages
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Testing. I can see release ${RELEASE} and log level ${LOG_LEVEL}."
+            }
+        }
+    }
+}
